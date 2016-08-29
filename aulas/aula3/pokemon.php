@@ -22,9 +22,6 @@
                 }
             }
 
-            /*
-            foreach
-            */
             class Trainer{
                 public $nome, $pokeBag;
 
@@ -58,19 +55,20 @@
                 public $pokemon;
 
                 public function guardarPokemon(Pokemon $pokemon){
-                    if($this->pokemon == null)
-                         $this->pokemon = $pokemon;
+                    $this->pokemon = $pokemon;
                 }
             }
-
+            //EXERCICIO: Fazer um metodo que mostre quantas pokebolas
+            //estao vazias.
             //TESTEM: 1 Trainer, 3 pokebolas e 2 pokemons caputrados
-            $t = new Trainer("Ash");
-            $t->adquirirPokeBola();
-            $p = new Pokemon("Squirtle", "Água", 7);
+            $t = new Trainer("Misty");
+            $t->adquirirPokebola();
+            $p = new Pokemon("Togepi", "Terra", 8);
             $t->capturar($p);
-            $t->adquirirPokeBola();
-            $t->capturar(new Pokemon("Blastoise","Agua",9));
-            $t->adquirirPokeBola();
+            $t->adquirirPokebola();
+            $q = new Pokemon("Staryu", "Agua", 8);
+            $t->capturar($q);
+            $t->adquirirPokebola();
             $t->listarPokemons();
         ?>
     </body>

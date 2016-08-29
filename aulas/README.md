@@ -30,3 +30,52 @@ Nivel que uma classe sabe da outra.
 - Nivel que uma classe sabe da outra.
 - Sempre buscar **baixo** acomplamento.
 - Acoplamento alto aumenta a dependência no seu código.
+
+---
+
+### Herança
+Relação hierárquica entre classes.
+
+Java e php não suportam herança múltipla (colocar vírgula para separar as classes).
+
+Uma classe A acima de uma classe B é chamada de superclasse, enquanto B é chamada de subclasse.
+
+Todos os membros (a menos de modificador de acesso) de A são acessiveis (visíveis) em B.
+
+```php
+$b = new B();
+$b -> metodo();
+```
+
+```php
+class Foo(){
+    public $a;
+    public function __construct($a){
+        $this->a = $a;
+    }
+}
+
+class Bar extends Foo{
+    public function __construct($a){
+        parent :: __construct($a);
+    }
+}
+```
+
+**extends** indica uma classe filha que está herdando uma classe pai.
+
+Herança se utiliza **apenas uma vez**.
+
+Em uma relação de herança uma classe sabe muito da outra.
+
+Exercío de __[herança](aula4/pokemon.php)__
+
+#### Ícones em diagrama de classes
+
+Atributos:
+    Atributos são representados com o símbolo: **-**
+
+Métodos:
+    Métodos são representados por **+**.
+    
+    Ao encontrar um ícone **+** em um diagrama de classes significa que o método é **público**.
