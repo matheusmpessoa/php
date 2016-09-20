@@ -10,14 +10,15 @@ Quando for analisar a regra do negócio (o problema):
 6. Esboce o código
 7. Codifique
 
-### Typehint
+---
+
+### Typehint de funções
 ```php
 public function __construct($marca, Pneu $p1, Pneu $p2, Pneu $p3){
 
 }
 ```
 Injeta a tipagem no construct.
-
 
 ### This
 Antes de utilizar o objeto da classe coloque o **this**.
@@ -40,7 +41,7 @@ Java e php não suportam herança múltipla (colocar vírgula para separar as cl
 
 Uma classe A acima de uma classe B é chamada de superclasse, enquanto B é chamada de subclasse.
 
-Todos os membros (a menos de modificador de acesso) de A são acessiveis (visíveis) em B.
+Todos os membros (a menos modificadores de acesso) de A são acessiveis (visíveis) em B.
 
 ```php
 $b = new B();
@@ -68,7 +69,7 @@ Herança se utiliza **apenas uma vez**.
 
 Em uma relação de herança uma classe sabe muito da outra.
 
-Exercío de __[herança](aula4/pokemon.php)__
+Exercío de __[herança](aula4/pokemon.php)__ feito na aula.
 
 #### Ícones em diagrama de classes
 
@@ -76,6 +77,101 @@ Atributos:
     Atributos são representados com o símbolo: **-**
 
 Métodos:
-    Métodos são representados por **+**.
-    
-    Ao encontrar um ícone **+** em um diagrama de classes significa que o método é **público**.
+
+- Métodos são representados por **+**.
+- Ao encontrar um ícone **+** em um diagrama de classes significa que o método é **público**.
+
+---
+
+### Abstração
+
+Ato de esconder detalhes de implementação de classes usuárias.
+
+O foco é mostrar apenas o que o objeto sabe fazer (e não sabe como fazer).
+
+Representa também uma generalização de comportamentos.
+Esse conceito é obtido por dois meios:
+- a) classes abstratas (pode possuir atributos e métodos concretos)
+- b) interfaces (constantes + assinatura de métodos)
+
+#### Classes abstratas
+Possuem atributos e métodos concretos.
+
+Classe abstrata pode ter apenas um "pai".
+
+Classes abstratas e interfaces não podem ser instanciadas.
+
+Métodos abstratos é um método sem corpo de código.
+
+
+No typehint, se uma classe A (abstrata, interface) for marcada como typehint, EXEMPLO,
+
+```php
+interface Foo{
+   public function metodo(A $a);
+}
+OU
+class Foo{
+   public function metodo(A $a){
+
+   }
+}
+```
+
+E B, C e D são subclasses de A, então é possível fazer o seguinte:
+
+```php
+$foo = new Foo();
+$foo->metodo(new B);
+$foo->metodo(new C);
+$foo->metodo(new D);
+```
+
+Não é permitido
+
+```php
+$foo->metodo(new A); 
+```
+
+Pois A é abstrata.
+
+#### Interface
+Interfaces podem ter vários "pais".
+
+Interface simula herança múltipla.
+
+
+---
+
+### Typehint
+No typehint, se uma classe A for marcada com typehint, ex:
+
+```php
+class Foo{
+    public function metodo(A $a){
+
+    }
+}
+```
+
+E B, C e D são subclasses de A, então é possível fazer o seguinte:
+
+```php
+$foo = new Foo();
+$foo->metodo(new B);
+$foo->metodo(new C);
+$foo->metodo(new D);
+```
+
+Não é permitido:
+```php
+$foo->metodo(new A);
+```
+Pois, A é abstrata.
+
+---
+
+### Duck Typing
+"Se algo, grasna como um pato, voa como um pato e nada como um pato então esta coisa é um pato."
+
+Exercío de __[duck typing](aula6/ducktyping.php)__ feito na aula.

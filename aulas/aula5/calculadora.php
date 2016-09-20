@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Aniversário</title>
-    </head>
-    <body>
-        <?php
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quadrilatero</title>
+</head>
+
+<body>
+    <?php
             class Calculadora{
                 public $num1, $num2;
 
                 public function __call($m, $args){
-                    echo "Comportamento indefinido: $m";
+                    echo "Comportmaneto indefinido: $m";
                 }
 
                 public function __construct($num1, $num2){
@@ -37,7 +39,6 @@
                         echo "<p> Erro </p>";
                 }
             }
-
             //$a = $_GET["n1"];
             //$b = $_GET["n2"];
             //$oper = $_GET["oper"];
@@ -51,5 +52,6 @@
             echo $$a;
 
         ?>
-    </body>
+</body>
+
 </html>
