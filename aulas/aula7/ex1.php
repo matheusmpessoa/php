@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <?php            
+    <?php
         abstract class Produto{
 
             protected $preco, $qtdProduto;

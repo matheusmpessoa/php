@@ -1,3 +1,5 @@
+## Teoria
+
 NO TYPE-HINT, SE UMA CLASSE A (abstrata, interface) FOR MARCADA COMO TYPE HINT, EXEMPLO,
 interface Foo{
    public function metodo(A $a);
@@ -17,3 +19,18 @@ $foo->metodo(new C);
 $foo->metodo(new D);
 
 NAO EH PERMITIDO $foo->metodo(new A); POIS, A EH ABSTRATA
+
+
+
+## Instalações
+```bash
+mysql-ctl install
+```
+
+```bash
+phpmyadmin-ctl install
+```
+
+```bash
+mysql-ctl start
+```
