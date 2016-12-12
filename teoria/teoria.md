@@ -174,4 +174,19 @@ Pois, A é abstrata.
 ### Duck Typing
 "Se algo, grasna como um pato, voa como um pato e nada como um pato então esta coisa é um pato."
 
-Exercío de __[duck typing](aula6/ducktyping.php)__ feito na aula.
+Exercío de duck typing feito na aula6.
+
+---
+
+### Instalações
+```bash
+mysql-ctl install
+```
+
+```bash
+phpmyadmin-ctl install
+```
+
+```bash
+mysql-ctl start
+```
